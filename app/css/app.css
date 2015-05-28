@@ -98,19 +98,33 @@ header {
     height: 100px;
 }
 
+#feed-friends form {
+    width: 300px;
+}
+
+#feed-friends form img {
+    height: 40px;
+}
+
 #fiends-wrapper {
     margin: 0 auto;
 }
 
-#fiends-wrapper table {
-    border: 1px solid black;
-    table-layout: fixed;
-    width: 600px;
+#fiends-wrapper img {
+    padding-right: 15px;
 }
 
-#fiends-wrapper td {
-    border: 2px solid #888960;
-    overflow: hidden;
-    padding-top: 3px;
-    padding-bottom: 3px;
+#message-sender {
+    border: 1px solid #888960;
+    width: 350px;
+    padding: 5px;
+}
+
+#message-sender textarea {
+    margin-left: 30px;
+}
+
+#message-sender img {
+    margin-left: 15px;
+    padding-right: 2px;
 }
