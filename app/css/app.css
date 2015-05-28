@@ -82,7 +82,7 @@ header {
     margin-right: 110px;
 }
 
-#feed-friends table{
+#feed-friends table {
     border: 1px solid black;
     table-layout: fixed;
     width: 300px;
@@ -90,9 +90,27 @@ header {
 
 #feed-friends td {
     border: 2px solid #888960;
+    padding-top: 5px;
     overflow: hidden;
 }
 
 #feed-friends img {
     height: 100px;
+}
+
+#fiends-wrapper {
+    margin: 0 auto;
+}
+
+#fiends-wrapper table {
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 600px;
+}
+
+#fiends-wrapper td {
+    border: 2px solid #888960;
+    overflow: hidden;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
