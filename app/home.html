@@ -1,53 +1,85 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="css/app.css" />
-</head>
-<body>
-    <div class="container">
-        <div class="form-container">
-            <form class="form-signin" id="login-form">
-                <h2 class="form-signin-heading">Login</h2>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                <br />
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-            </form>
+﻿<div class="row" id="feed-wrapper">
+    <h2 id="screen-title">News Feed</h2>
+    <div id="feed" class="col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Nikolay Donchev</h4>
+                <h5>4 Jun 2023 13:34:12</h5>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                </p>
+                <div>
+                    <ul class="nav navbar-nav" id="media-footer">
+                        <li>42 Likes</li>
+                        <li><a href="#">Like?</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="form-container">
-            <form class="form-register" id="register-form">
-                <h2 class="form-signin-heading">Register</h2>
-                <label for="inputEmail" class="sr-only">Username</label>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
 
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Petyr Petrov</h4>
+                <h5>4 Jun 2023 13:34:12</h5>
+                <p>
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                </p>
+                <div>
+                    <ul class="nav navbar-nav" id="media-footer">
+                        <li>42 Likes</li>
+                        <li><a href="#">Like?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-                <label for="inputPassword" class="sr-only">Confirm Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required="">
-
-                <label for="inputEmail" class="sr-only">Name</label>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Name" required="" autofocus="">
-
-                <label for="inputEmail" class="sr-only">Email</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
-
-                <label for="town">Gender:</label>
-                <select>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-            </form>
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Nikolay Donchev</h4>
+                <h5>4 Jun 2023 13:34:12</h5>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                </p>
+                <div>
+                    <ul class="nav navbar-nav" id="media-footer">
+                        <li>42 Likes</li>
+                        <li><a href="#">Like?</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</body>
-</html>
+
+    <div id="feed-friends" class="col-md-4">
+        <h3>Friends - <a href="#">4</a> total</h3>
+        <table>
+            <tr>
+                <td><img src="pics/Me%20Smiling%20Small.jpg" /></td>
+                <td><img src="pics/Me%20Smiling%20Small.jpg" /></td>
+                <td><img src="pics/Me%20Smiling%20Small.jpg" /></td>
+            </tr>
+            <tr>
+                <td><img src="pics/Me%20Smiling%20Small.jpg" /></td>
+                <td><img src="pics/Me%20Smiling%20Small.jpg" /></td>
+                <td><img src="pics/Me%20Smiling%20Small.jpg" /></td>
+            </tr>
+        </table>
+    </div>
+</div>

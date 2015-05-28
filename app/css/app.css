@@ -50,3 +50,49 @@ header {
 .form-container input {
     margin-bottom: 10px;
 }
+
+#screen-title {
+    background-color: #D6D2AF;
+    color: #6F5289;
+    height: 50px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+#feed {
+    margin-left: 300px;
+}
+
+.media {
+    padding: 5px;
+    border: 1px solid #888960;
+    width: 500px;
+}
+
+#media-footer {
+    color: #6F5289;
+}
+
+#media-footer a {
+    padding: 0px;
+    margin: 0px;
+}
+
+#media-footer li {
+    margin-right: 110px;
+}
+
+#feed-friends table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 300px;
+}
+
+#feed-friends td {
+    border: 2px solid #888960;
+    overflow: hidden;
+}
+
+#feed-friends img {
+    height: 100px;
+}
