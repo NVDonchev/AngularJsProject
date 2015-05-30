@@ -28,15 +28,7 @@ app.factory('usersService',
             },
 
             logout: function (success, error) {
-                var request = {
-                    method: 'POST',
-                    url: baseServiceUrl + '/api/users/logout',
-                    headers: this.getAuthHeaders()
-                };
-                $http(request).success(function (data) {
-                    delete sessionStorage['currentUser'];
-                    success(data);
-                }).error(error);
+                delete sessionStorage['currentUser'];
             },
 
             isLoggedIn: function () {
@@ -52,11 +44,18 @@ app.factory('usersService',
                 return headers;
             },
 
+            getCurrentUser: function () {
+                var userObject = sessionStorage['currentUser'];
+                if (userObject) {
+                    return JSON.parse(sessionStorage['currentUser']);
+                }
+            },
+
             getUserPreviewData: function (user, success, error) {
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/users/' + user + '/preview',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -65,7 +64,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/' + user,
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -74,7 +73,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/search?searchTerm=' + searchTerm,
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -83,7 +82,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/' + user + '/wall?StartPostId=&PageSize=5',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -92,7 +91,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/' + user + '/friends',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -101,7 +100,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/users/' + user + '/friends/preview',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },

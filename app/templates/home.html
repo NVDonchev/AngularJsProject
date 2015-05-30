@@ -1,0 +1,78 @@
+﻿<div class="container">
+    <div class="row" id="feed-wrapper">
+        <h2 class="screen-title">News Feed</h2>
+        <div id="feed" class="col-md-6">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Nikolay Donchev</h4>
+                    <h5>4 Jun 2023 13:34:12</h5>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <div>
+                        <ul class="nav navbar-nav" id="media-footer">
+                            <li>42 Likes</li>
+                            <li><a href="#">Like?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Petyr Petrov</h4>
+                    <h5>4 Jun 2023 13:34:12</h5>
+                    <p>
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <div>
+                        <ul class="nav navbar-nav" id="media-footer">
+                            <li>42 Likes</li>
+                            <li><a href="#">Like?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Nikolay Donchev</h4>
+                    <h5>4 Jun 2023 13:34:12</h5>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <div>
+                        <ul class="nav navbar-nav" id="media-footer">
+                            <li>42 Likes</li>
+                            <li><a href="#">Like?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="feed-friends" class="col-md-4">
+            <h3>Friends - <a href="#">{{friendsCount}}</a> total</h3>
+            <div id="friendsPreview">
+                <div class="pull-left" ng-repeat="friend in friendsList">{{friend.name}}<img src="{{friend.image}}" /></div>
+            </div>
+        </div>
+    </div>
+</div>

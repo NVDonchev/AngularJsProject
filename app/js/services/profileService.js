@@ -1,13 +1,13 @@
 ﻿'use strict';
 
 app.factory('profileService',
-    function ($http, baseServiceUrl) {
+    function ($http, baseServiceUrl, usersService) {
         return {
             getCurrentUserData: function (success, error) {
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/me',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -16,7 +16,7 @@ app.factory('profileService',
                 var request = {
                     method: 'PUT',
                     url: baseServiceUrl + '/api/me',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                     data: userData
                 };
                 $http(request).success(success).error(error);
@@ -26,7 +26,7 @@ app.factory('profileService',
                 var request = {
                     method: 'PUT',
                     url: baseServiceUrl + '/api/me/changepassword',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                     data: passwordData
                 };
                 $http(request).success(success).error(error);
@@ -36,7 +36,7 @@ app.factory('profileService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/me/friends/preview',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -45,7 +45,7 @@ app.factory('profileService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/me/friends',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -54,7 +54,7 @@ app.factory('profileService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/me/feed?StartPostId=&PageSize=5',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -63,7 +63,7 @@ app.factory('profileService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/me/requests',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -72,7 +72,7 @@ app.factory('profileService',
                 var request = {
                     method: 'PUT',
                     url: baseServiceUrl + '/api/me/requests/' + requestId + '?status=approved',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -81,7 +81,7 @@ app.factory('profileService',
                 var request = {
                     method: 'PUT',
                     url: baseServiceUrl + '/api/me/requests/' + requestId + '?status=rejected',
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -90,7 +90,7 @@ app.factory('profileService',
                 var request = {
                     method: 'POST',
                     url: baseServiceUrl + '/api/me/requests/' + user,
-                    headers: authService.getAuthHeaders(),
+                    headers: usersService.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },

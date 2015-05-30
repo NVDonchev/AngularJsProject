@@ -182,3 +182,16 @@ header {
     padding: 5px;
     width: 300px;
 }
+
+#friendsPreview {
+    width: 303px;
+}
+
+#friendsPreview div {
+    width: 100px;
+    margin-right: 1px;
+}
+
+#friendsPreview div img {
+    width: 100px;
+}

@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html ng-app="app" ng-controller="AppController">
 
 <head>
     <!-- Load CSS files -->
@@ -9,38 +9,16 @@
     <link rel="stylesheet" href="css/app.css" />
 
     <meta charset="utf-8">
-    <title>No Title</title>
+    <title>Social Network</title>
 </head>
 
 <body>
-
-    <header id="app-header">
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" id="nav-menu">
-                <li><a href="#"><img src="pics/Me%20Smiling%20Small.jpg" width="80" /></a></li>
-                <li id="username"><a href="#">Nikolay Donchev</a></li>
-                <li><a href="#">News Feed</a></li>
-                <li><a href="#">Friend Requests(2)</a></li>
-                <li><a href="#">Edit Profile</a></li>
-                <li><a href="#">Change Password</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" id="search-bar">
-                <li>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search people">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Search</button>
-                        </span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <header id="app-header" ng-if="usersService.isLoggedIn()">
+        <div ng-include="'templates/partial/header.html'"></div>
     </header>
 
     <div id='app-content'>
-        <div ng-view>
-        </div>
+        <div ng-view></div>
     </div>
 
     <!-- Load app libraries -->
@@ -52,6 +30,16 @@
     <script src="lib/bootstrap/bootstrap-3.1.1.js"></script>
 
     <!-- Load app source code: main script, services, controllers, etc. -->
+    <script src="js/app.js"></script>
+
+    <script src="js/services/usersService.js"></script>
+    <script src="js/services/profileService.js"></script>
+    <script src="js/services/postsService.js"></script>
+    <script src="js/services/notifyService.js"></script>
+
+    <script src="js/controllers/AppController.js"></script>
+    <script src="js/controllers/AuthenticationController.js"></script>
+    <script src="js/controllers/HomeController.js"></script>
 </body>
 
 </html>
