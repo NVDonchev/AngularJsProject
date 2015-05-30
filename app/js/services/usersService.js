@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.factory('authService',
+app.factory('usersService',
     function ($http, baseServiceUrl) {
         return {
             login: function (userData, success, error) {
