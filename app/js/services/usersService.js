@@ -39,13 +39,6 @@ app.factory('usersService',
                 }).error(error);
             },
 
-            getCurrentUser: function () {
-                var userObject = sessionStorage['currentUser'];
-                if (userObject) {
-                    return JSON.parse(sessionStorage['currentUser']);
-                }
-            },
-
             isLoggedIn: function () {
                 return sessionStorage['currentUser'] != undefined;
             },
