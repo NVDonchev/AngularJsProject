@@ -1,3 +1,15 @@
+.link {
+    color: #2E75B6;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #29619d;
+    text-decoration: none;
+}
+
 body {
     background-color: #E6EBE1;
 }  
