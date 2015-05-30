@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <h2 class="screen-title">Edit Profile</h2>
+    <div id="edit-profile-wrapper">
+
+        <form id="profile-edit-form">
+            <div id="avatar-edit" class="col-md-2">
+                <img src="pics/Me Smiling Small.jpg" height="100" />
+                <p>
+                    Allowed format: jpg <br />
+                    Limit: 128kb
+                </p>
+                <button class="btn btn-primary">Upload</button>
+            </div>
+            <div class="row">
+                <div id="profile-edit" class="col-md-4">
+                    <div>
+                        <label for="inputEmail" class="sr-only">Username</label>
+                        <input type="text" id="inputName" class="form-control" placeholder="Name" required>
+
+                        <label for="inputEmail" class="sr-only">Email</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+
+                        <label for="town">Gender:</label>
+                        <select>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <br />
+                        <div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Upload</button>
+                                <p>Limit 1024kb</p>
+                            </div>
+                            <div class="col-md-9">
+                                <img src="pics/P1000281.JPG" id="wall-image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button id="edit-profile-submit" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

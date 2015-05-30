@@ -51,7 +51,7 @@ header {
     margin-bottom: 10px;
 }
 
-#screen-title {
+.screen-title {
     background-color: #D6D2AF;
     color: #6F5289;
     height: 50px;
@@ -60,7 +60,7 @@ header {
 }
 
 #feed {
-    margin-left: 300px;
+    margin-left: 30px;
 }
 
 .media {
@@ -80,6 +80,9 @@ header {
 
 #media-footer li {
     margin-right: 110px;
+}
+
+#feed-friends {
 }
 
 #feed-friends table {
@@ -127,4 +130,48 @@ header {
 #message-sender img {
     margin-left: 15px;
     padding-right: 2px;
+}
+
+#friend-header {
+    height: 200px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-image: url(../pics/P1000281.JPG);
+    background-position: center;
+}
+
+#friend-header img {
+    position: relative;
+    top: 20px;
+    left: 150px;
+}
+
+#friend-header div {
+    position: relative;
+    bottom: 110px;
+    left: 400px;
+}
+
+#friend-header div p {
+    font-weight: bold;
+}
+
+#edit-profile-wrapper {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#avatar-edit, #profile-edit {
+    padding: 10px;
+    margin-right: 20px;
+}
+
+#wall-image {
+    max-height: 150px;
+    max-width: 200px;
+}
+
+#edit-profile-submit {
+    margin-left: 200px;
+    width: 100px;
 }
