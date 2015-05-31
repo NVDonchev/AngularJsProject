@@ -1,0 +1,34 @@
+﻿
+<h2 class="screen-title">Edit Profile</h2>
+<div id="edit-profile-wrapper">
+    <form>
+        <div class="form-group">
+            <label>Avatar Image</label><br />
+            <img src="pics/Me Smiling Small.jpg" height="100" />
+            <input type="file" ng-model="editData.profileImageData" />
+            <p>
+                Allowed format: jpg <br />
+                Limit: 128kb
+            </p>
+        </div>
+        <div class="form-group">
+            <label>Profile Information</label><br />
+            <input type="text" class="form-control" placeholder="Name" ng-model="editData.name" required>
+            <input type="email" class="form-control" placeholder="Email" ng-model="editData.email" required>
+            <br />
+            <label for="gender">Gender:</label>
+            <select ng-model="editData.gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Wall Image</label><br />
+            <img src="pics/P1000281.JPG" id="wall-image" />
+            <input type="file" ng-model="editData.coverImageData" />
+            <p>Limit 1024kb</p>
+        </div>
+        <button id="edit-profile-submit" class="btn btn-lg btn-primary btn-block" ng-click="submitChanges(editData)">Save Changes</button>
+    </form>
+</div>
