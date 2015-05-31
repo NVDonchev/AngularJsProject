@@ -5,8 +5,9 @@
 
             <div class="media" ng-repeat="newsArticle in newsList">
                 <div class="media-left">
-                    <a class="link" ng-show="newsArticle.author.profileImageData">
-                        <img src="{{newsArticle.author.profileImageData}}" height="50" />
+                    <a>
+                        <!--<img src="{{newsArticle.author.profileImageData}}" height="50" />-->
+                        <img src="../pics/no_image_available.jpeg" height="50" />
                     </a>
                 </div>
                 <div class="media-body">
@@ -28,7 +29,7 @@
         <div id="wall-right-side" class="col-md-4">
             <h3>Friends - <a href="/#/users/{{currentUser.userName}}/friends">{{friendsCount}}</a> total</h3>
             <div class="friendsPreview">
-                <div class="pull-left" ng-repeat="friend in friendsList"><a href="/#/users/{{friend.username}}">{{friend.name}}<img src="" /></a></div>
+                <div class="pull-left" ng-repeat="friend in friendsList"><a href="/#/users/{{friend.username}}">{{friend.name}}<br /><img src="../pics/no_image_available.jpeg" /></a></div>
             </div>
         </div>
     </div>

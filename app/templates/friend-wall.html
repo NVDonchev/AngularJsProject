@@ -1,6 +1,6 @@
 ﻿<div class="row" id="feed-wrapper">
     <div id="friend-header">
-        <img src="pics/Me Smiling Small.jpg" height="150" /> <!--TODO: Put real pic-->
+        <img src="../pics/no_image_available.jpeg" height="150" />
         <div>
             <h2>{{friendData.name}}</h2>
             <h3 ng-show="friendData.isFriend">Friend</h3>
@@ -12,7 +12,7 @@
         <div class="media" ng-repeat="newsArticle in postsList">
             <div class="media-left">
                 <a class="link" ng-show="newsArticle.author.profileImageData">
-                    <img src="{{newsArticle.author.profileImageData}}" height="50" />
+                    <img src="../pics/no_image_available.jpeg" height="50" />
                 </a>
             </div>
             <div class="media-body">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-9">
-                        <img src="pics/Me%20Smiling%20Small.jpg" height="50" /> <!--TODO: Pic-->
+                        <img src="../pics/no_image_available.jpeg" height="50" />
                         <span>as {{currentUser.userName}}</span>
                     </div>
                     <div class="col-md-3"><button class="btn btn-primary" ng-click="submitMessage(postContent, currentUser.userName)">Submit</button></div>
@@ -46,7 +46,7 @@
 
         <h3>Friends - <a href="/#/users/{{friendData.username}}/friends">{{friendsCount}}</a> total</h3>
         <div class="friendsPreview">
-            <div class="pull-left" ng-repeat="friend in friendsList"><a href="/#/users/{{friend.username}}">{{friend.name}}<img src="{{friend.profileImageData}}" /></a></div>
+            <div class="pull-left" ng-repeat="friend in friendsList"><a href="/#/users/{{friend.username}}">{{friend.name}}<img src="../pics/no_image_available.jpeg" /></a></div>
         </div>
     </div>
 </div>
