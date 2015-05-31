@@ -1,7 +1,9 @@
 ﻿'use strict';
 
 app.controller('HomeController',
-    function ($scope, $rootScope, $location, usersService, profileService, postsService, notifyService) {
+    function ($scope, $location, usersService, profileService, postsService, notifyService) {
+        $scope.currentUser = usersService.getCurrentUser().userName;
+
         $scope.getCurrentUserFriendsPreview = function () {
             profileService.getCurrentUserFriendsPreview(
                 function success(data) {
@@ -20,22 +22,31 @@ app.controller('HomeController',
                     $scope.newsList = data;
                 },
                 function error(err) {
+                    notifyService.showError("Cannot retrieve news feed", err);
                 });
         };
         $scope.getNewsFeedPages();
 
-        $scope.likePost = function () {
+        $scope.likePost = function (postId) {
             postsService.likePost(
+                postId,
                 function success(data) {
-
+                    $scope.getNewsFeedPages();
                 }),
                 function error(err) {
-
+                    notifyService.showError("Cannot send like post request", err);
                 };
         }
 
-        //$scope.toggleLikeUnlike() = function () {
-
-        //}
+        $scope.unlikePost = function (postId) {
+            postsService.unlikePost(
+                postId,
+                function success(data) {
+                    $scope.getNewsFeedPages();
+                }),
+                function error(err) {
+                    notifyService.showError("Cannot send unlike post request", err);
+                };
+        }
     }
 );

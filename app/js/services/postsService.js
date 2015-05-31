@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 app.factory('postsService',
-    function ($http, baseServiceUrl) {
+    function ($http, baseServiceUrl, usersService) {
         return {
             addNewPost: function (postData, success, error) {
                 var request = {

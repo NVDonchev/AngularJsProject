@@ -23,4 +23,15 @@ app.config(function ($routeProvider) {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
     });
+
+    $routeProvider.when('/users/:username/friends', {
+        templateUrl: 'templates/friends.html',
+        controller: 'FriendsController'
+    });
+
+
+    $routeProvider.when('/users/:username', {
+        templateUrl: 'templates/friend-wall.html',
+        controller: 'FriendWallController'
+    });
 });

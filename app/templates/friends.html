@@ -1,0 +1,23 @@
+﻿<div id="fiends-wrapper">
+    <div class="row col-md-offset-4">
+        <ul class="nav navbar-nav" id="search-bar">
+            <li>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search friends">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Search</button>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <div class ="row col-md-offset-4">
+        <table id="friendsTable">
+            <tr ng-repeat="friend in friendsList">
+                <td><a href="#"><img src="../pics/Me%20Smiling%20Small.jpg" /></a></td> <!--TODO: Add real picture link and handle missing pic scenario-->
+                <td><a href="#">{{friend.name}}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
