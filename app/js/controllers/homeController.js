@@ -2,8 +2,6 @@
 
 app.controller('HomeController',
     function ($scope, $location, usersService, profileService, postsService, notifyService) {
-        $scope.currentUser = usersService.getCurrentUser().userName;
-
         $scope.getCurrentUserFriendsPreview = function () {
             profileService.getCurrentUserFriendsPreview(
                 function success(data) {

@@ -1,111 +1,52 @@
-﻿
-<div class="row" id="feed-wrapper">
-
+﻿<div class="row" id="feed-wrapper">
     <div id="friend-header">
-        <img src="pics/Me Smiling Small.jpg" height="150" />
+        <img src="pics/Me Smiling Small.jpg" height="150" /> <!--TODO: Put real pic-->
         <div>
-            <h2>Nikolay Donchev</h2>
-            <h3>Friend</h3>
+            <h2>{{friendData.name}}</h2>
+            <h3 ng-show="friendData.isFriend">Friend</h3>
         </div>
     </div>
 
-    <div id="feed" class="col-md-5">
-        <div class="media">
-            <div class="media-left">
-                <a href="#">
-                    <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Nikolay Donchev</h4>
-                <h5>4 Jun 2023 13:34:12</h5>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                </p>
-                <div>
-                    <ul class="nav navbar-nav" id="media-footer">
-                        <li>42 Likes</li>
-                        <li><a href="#">Like?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div id="wall-left-side" class="col-md-5">
 
-        <div class="media">
+        <div class="media" ng-repeat="newsArticle in postsList">
             <div class="media-left">
-                <a href="#">
-                    <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
+                <a class="link" ng-show="newsArticle.author.profileImageData">
+                    <img src="{{newsArticle.author.profileImageData}}" height="50" />
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">Petyr Petrov</h4>
-                <h5>4 Jun 2023 13:34:12</h5>
-                <p>
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                </p>
+                <h4 class="media-heading"><a href="/#/users/{{newsArticle.author.username}}">{{newsArticle.author.name}}</a></h4>
+                <h5>{{newsArticle.date}}</h5>
+                <p>{{newsArticle.postContent}}</p>
                 <div>
-                    <ul class="nav navbar-nav" id="media-footer">
-                        <li>42 Likes</li>
-                        <li><a href="#">Like?</a></li>
-                    </ul>
+                    <span>{{newsArticle.likesCount}} Likes</span>
                 </div>
             </div>
         </div>
-
-        <div class="media">
-            <div class="media-left">
-                <a href="#">
-                    <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Nikolay Donchev</h4>
-                <h5>4 Jun 2023 13:34:12</h5>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                </p>
-                <div>
-                    <ul class="nav navbar-nav" id="media-footer">
-                        <li>42 Likes</li>
-                        <li><a href="#">Like?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <h3 ng-show="!postsList.length">No News</h3>
     </div>
-
-    <div id="feed-friends" class="col-md-4">
+    <div ng-show="friendData.isFriend || friendData.username === currentUser.userName" id="wall-right-side" class="col-md-4">
         <div id="message-sender">
             <form>
                 <div class="row">
-                    <textarea rows="3" cols="40" placeholder="Message"></textarea>
+                    <textarea rows="3" cols="40" placeholder="New Post" ng-model="postContent"></textarea>
                 </div>
                 <div class="row">
                     <div class="col-md-9">
-                        <img src="pics/Me%20Smiling%20Small.jpg" height="50" />
-                        <span>as Nikolay Donchev</span>
+                        <img src="pics/Me%20Smiling%20Small.jpg" height="50" /> <!--TODO: Pic-->
+                        <span>as {{currentUser.userName}}</span>
                     </div>
-                    <div class="col-md-3"><button type="submit" class="btn btn-primary">Submit</button></div>
+                    <div class="col-md-3"><button class="btn btn-primary" ng-click="submitMessage(postContent, currentUser.userName)">Submit</button></div>
                 </div>
             </form>
         </div>
 
         <br />
 
-        <h3>Friends - <a href="#">4</a> total</h3>
-        <table>
-            <tr>
-                <td>Nikolay<img src="pics/Me%20Smiling%20Small.jpg" /></td>
-                <td>Nikolay<img src="pics/Me%20Smiling%20Small.jpg" /></td>
-                <td>Nikolay<img src="pics/Me%20Smiling%20Small.jpg" /></td>
-            </tr>
-            <tr>
-                <td>Nikolay<img src="pics/Me%20Smiling%20Small.jpg" /></td>
-                <td>Nikolay<img src="pics/Me%20Smiling%20Small.jpg" /></td>
-                <td>Nikolay<img src="pics/Me%20Smiling%20Small.jpg" /></td>
-            </tr>
-        </table>
+        <h3>Friends - <a href="/#/users/{{friendData.username}}/friends">{{friendsCount}}</a> total</h3>
+        <div class="friendsPreview">
+            <div class="pull-left" ng-repeat="friend in friendsList"><a href="/#/users/{{friend.username}}">{{friend.name}}<img src="{{friend.profileImageData}}" /></a></div>
+        </div>
     </div>
 </div>

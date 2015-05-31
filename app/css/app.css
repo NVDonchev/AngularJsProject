@@ -71,7 +71,7 @@ header {
     text-align: center;
 }
 
-#feed {
+#wall-left-side {
     margin-left: 30px;
 }
 
@@ -94,30 +94,30 @@ header {
     margin-right: 110px;
 }
 
-#feed-friends {
+#wall-right-side {
 }
 
-#feed-friends table {
+#wall-right-side table {
     border: 1px solid black;
     table-layout: fixed;
     width: 300px;
 }
 
-#feed-friends td {
+#wall-right-side td {
     border: 2px solid #888960;
     padding-top: 5px;
     overflow: hidden;
 }
 
-#feed-friends img {
+#wall-right-side img {
     height: 100px;
 }
 
-#feed-friends form {
+#wall-right-side form {
     width: 300px;
 }
 
-#feed-friends form img {
+#wall-right-side form img {
     height: 40px;
 }
 
@@ -195,7 +195,7 @@ header {
     width: 300px;
 }
 
-#friendsPreview {
+.friendsPreview {
     width: 303px;
 }
 

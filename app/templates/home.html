@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div class="row" id="feed-wrapper">
         <h2 class="screen-title">News Feed</h2>
-        <div id="feed" class="col-md-6">
+        <div id="wall-left-side" class="col-md-6">
 
             <div class="media" ng-repeat="newsArticle in newsList">
                 <div class="media-left">
@@ -12,23 +12,23 @@
                 <div class="media-body">
                     <h4 class="media-heading">{{newsArticle.author.name}}</h4>
                     <h5>{{newsArticle.date}}</h5>
-                    <p>{{newsArticle.postContent}}</p>
+                    <p>{{newsArticle.postContent}}</p>                
                     <div>
-                        <ul class="nav navbar-nav" id="media-footer">
-                            <li>{{newsArticle.likesCount}} Likes</li>
+                        <ul ng-show="newsArticle.author.isFriend || newsArticle.wallOwner.isFriend" class="nav navbar-nav" id="media-footer">
                             <li ng-show="!newsArticle.liked"><a class="link" ng-click="likePost(newsArticle.id)">Like?</a></li>
                             <li ng-show="newsArticle.liked"><a class="link" ng-click="unlikePost(newsArticle.id)">Unlike?</a></li>
-                        </ul>
+                        </ul>                        
+                        <span>{{newsArticle.likesCount}} Likes</span>
                     </div>
                 </div>
             </div>
             <h3 ng-show="!newsList.length">No News</h3>
 
         </div>
-        <div id="feed-friends" class="col-md-4">
-            <h3>Friends - <a href="/#/users/{{currentUser}}/friends">{{friendsCount}}</a> total</h3>
-            <div id="friendsPreview">
-                <div class="pull-left" ng-repeat="friend in friendsList"><a class="link">{{friend.name}}<img src="{{friend.profileImageData}}" /></a></div>
+        <div id="wall-right-side" class="col-md-4">
+            <h3>Friends - <a href="/#/users/{{currentUser.userName}}/friends">{{friendsCount}}</a> total</h3>
+            <div class="friendsPreview">
+                <div class="pull-left" ng-repeat="friend in friendsList"><a href="/#/users/{{friend.username}}">{{friend.name}}<img src="" /></a></div>
             </div>
         </div>
     </div>

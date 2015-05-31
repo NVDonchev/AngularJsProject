@@ -55,16 +55,16 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/users/' + user + '/preview',
-                    headers: usersService.getAuthHeaders(),
+                    headers: this.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
 
-            getUserFullData: function (user, success, error) {
+            getUserFullData: function (username, success, error) {
                 var request = {
                     method: 'GET',
-                    url: baseServiceUrl + '/api/users/' + user,
-                    headers: usersService.getAuthHeaders(),
+                    url: baseServiceUrl + '/api/users/' + username,
+                    headers: this.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -73,7 +73,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/search?searchTerm=' + searchTerm,
-                    headers: usersService.getAuthHeaders(),
+                    headers: this.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -82,7 +82,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/' + user + '/wall?StartPostId=&PageSize=5',
-                    headers: usersService.getAuthHeaders(),
+                    headers: this.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -91,7 +91,7 @@ app.factory('usersService',
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/users/' + user + '/friends',
-                    headers: usersService.getAuthHeaders(),
+                    headers: this.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
@@ -99,8 +99,8 @@ app.factory('usersService',
             getFriendFriendsPreview: function (user, success, error) {
                 var request = {
                     method: 'GET',
-                    url: baseServiceUrl + '/users/' + user + '/friends/preview',
-                    headers: usersService.getAuthHeaders(),
+                    url: baseServiceUrl + '/api/users/' + user + '/friends/preview',
+                    headers: this.getAuthHeaders(),
                 };
                 $http(request).success(success).error(error);
             },
