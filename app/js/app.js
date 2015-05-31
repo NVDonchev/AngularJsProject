@@ -3,7 +3,6 @@
 var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 app.constant('baseServiceUrl', 'http://softuni-social-network.azurewebsites.net');
-//app.constant('pageSize', 5);
 
 app.filter('debug', function () {
     return function (input) {
@@ -38,4 +37,15 @@ app.config(function ($routeProvider) {
         templateUrl: 'templates/change-password.html',
         controller: 'ChangePasswordController'
     });
+});
+
+app.run(function ($rootScope, $location, usersService) {
+  $rootScope.$on('$locationChangeStart', function (event) {
+    if (!usersService.isLoggedIn()) {
+      $location.path("/");
+    }
+    else if ($location.path() == "/") {
+        $location.path("/home/");
+    }
+  });
 });

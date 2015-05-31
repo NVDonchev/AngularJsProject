@@ -38,6 +38,8 @@ app.controller('FriendWallController',
                 postData,
                 function success(data) {
                     notifyService.showInfo("Post successful");
+                    $scope.getFriendWallByPages();
+                    $scope.postContent = "";
                 }),
                 function error(err) {
                     notifyService.showError("Adding new post failed", err);

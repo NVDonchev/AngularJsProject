@@ -2,6 +2,10 @@
 
 app.controller('AuthenticationController',
     function ($scope, $location, usersService, profileService, notifyService) {
+        if (!usersService.isLoggedIn) {
+            $location.path("/home/");
+        }
+
         $scope.login = function (userData) {
             usersService.login(userData,
                 function success() {
