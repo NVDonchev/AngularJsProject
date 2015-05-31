@@ -29,9 +29,13 @@ app.config(function ($routeProvider) {
         controller: 'FriendsController'
     });
 
-
     $routeProvider.when('/users/:username', {
         templateUrl: 'templates/friend-wall.html',
         controller: 'FriendWallController'
+    });
+
+    $routeProvider.when('/profile/password', {
+        templateUrl: 'templates/change-password.html',
+        controller: 'ChangePasswordController'
     });
 });

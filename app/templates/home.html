@@ -16,8 +16,8 @@
                     <div>
                         <ul class="nav navbar-nav" id="media-footer">
                             <li>{{newsArticle.likesCount}} Likes</li>
-                            <li ng-show="!newsArticle.liked"><a class="link">Like?</a></li>
-                            <li ng-show="newsArticle.liked"><a class="link">Unlike?</a></li>
+                            <li ng-show="!newsArticle.liked"><a class="link" ng-click="likePost(newsArticle.id)">Like?</a></li>
+                            <li ng-show="newsArticle.liked"><a class="link" ng-click="unlikePost(newsArticle.id)">Unlike?</a></li>
                         </ul>
                     </div>
                 </div>
@@ -26,9 +26,10 @@
 
         </div>
         <div id="feed-friends" class="col-md-4">
-            <h3>Friends - <a href="#">{{friendsCount}}</a> total</h3>
+            <h3>Friends - <a href="/#/users/{{currentUser}}/friends">{{friendsCount}}</a> total</h3>
             <div id="friendsPreview">
-                <div class="pull-left" ng-repeat="friend in friendsList">{{friend.name}}<img src="{{friend.profileImageData}}" /></div>
+                <div class="pull-left" ng-repeat="friend in friendsList"><a class="link">{{friend.name}}<img src="{{friend.profileImageData}}" /></a></div>
             </div>
         </div>
     </div>
+</div>

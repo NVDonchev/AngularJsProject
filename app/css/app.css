@@ -207,3 +207,17 @@ header {
 #friendsPreview div img {
     width: 100px;
 }
+
+#friendsTable td {
+    padding-bottom: 10px;
+    height: 100px;
+}
+
+#friendsTable img {
+    padding-bottom: 10px;
+    height: 100px;
+}
+
+#changePasswordWrapper {
+    margin-left: 30px;
+}
